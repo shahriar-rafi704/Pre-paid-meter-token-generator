@@ -15,14 +15,14 @@ function extractOTP() {
     
     // Split SMS into OTPs
     const otpStrings = sms.match(/\d{4}-\d{4}-\d{4}-\d{4}-\d{4}/g); // Extract OTP-like strings
-    otps = otpStrings ? otpStrings.map(otp => otp.replace(/-/g, '')) : []; // Remove dashes and store in otps array
+    otps = otpStrings ? otpStrings.map(otp => otp.replace(/-/g, '')) : []; /
 }
 
 // Function to display the next OTP
 function displayNextOTP() {
     if (currentIndex < otps.length - 1) { // Check if currentIndex is within bounds
         currentIndex++; // Increment index to display the next OTP
-        const formattedOTP = otps[currentIndex].match(/.{1,4}/g).join('-'); // Insert dashes between every four digits
+        const formattedOTP = otps[currentIndex].match(/.{1,4}/g).join('-'); 
         otpDisplay.innerText = formattedOTP;
     }
     // Disable or enable navigation buttons based on the current index
